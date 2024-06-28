@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TestCaseCANCreative</string>
+
+    <string name="nb_home">Beranda</string>
+    <string name="nb_fav">Disuka</string>
+
+    <!--    Ketuk Dua Kali keluar -->
+    <string name="confirm_close">Press again to exit</string>
+</resources>

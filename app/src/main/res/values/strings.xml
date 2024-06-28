@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TestCaseCANCreative</string>
+
+    <string name="nb_home">Home</string>
+    <string name="nb_fav">Favorite</string>
+
+    <!--    Ketuk Dua Kali keluar -->
+    <string name="confirm_close">Tekan kembali lagi untuk keluar</string>
+
+</resources>
