@@ -68,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
-                        android:layout_toLeftOf="@id/divRight"
+                        android:layout_toLeftOf="@id/divFav"
                         android:id="@id/divTop"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
                     </LinearLayout>
 
                     <RelativeLayout
-                        android:id="@+id/divRight"
+                        android:id="@+id/divFav"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -106,6 +106,7 @@
                             android:layout_height="50dp"
                             android:src="@color/colorPrimaryTransparent2"/>
                         <ImageView
+                            android:id="@+id/ivFav"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:src="@drawable/baseline_favorite_border_24"

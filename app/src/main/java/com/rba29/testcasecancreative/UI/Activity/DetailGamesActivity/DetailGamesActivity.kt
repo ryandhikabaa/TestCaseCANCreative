@@ -8,8 +8,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.rba29.testcasecancreative.Data.Db.FavoriteGames.FavoriteGames
 import com.rba29.testcasecancreative.Data.Response.ListResultItem
 import com.rba29.testcasecancreative.R
 import com.rba29.testcasecancreative.UI.Fragment.HomeFragment.HomeFragmentViewModel
@@ -22,6 +24,8 @@ class DetailGamesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailGamesBinding
 
     private lateinit var viewModel: DetailGameViewModel
+
+    private var _isFavorite: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +70,32 @@ class DetailGamesActivity : AppCompatActivity() {
                                 shareIntent.putExtra(Intent.EXTRA_TEXT, text)
                                 startActivity(Intent.createChooser(shareIntent, "Dicoding Stories"))
                             }
+
+                            viewModel.getFavoriteGamesById(data.id).observe(this@DetailGamesActivity, Observer { gameFav ->
+                                if (gameFav != null) {
+                                    ivFav.setImageResource(R.drawable.baseline_favorite_24)
+                                    _isFavorite = false
+                                } else {
+                                    ivFav.setImageResource(R.drawable.baseline_favorite_border_24)
+                                    _isFavorite = true
+                                }
+                            })
+
+                            divFav.setOnClickListener(View.OnClickListener {
+                                val gameFavClick = FavoriteGames(
+                                    id = data.id,
+                                    name = data.name,
+                                    slug = data.slug,
+                                    released = data.released,
+                                    rating = data.rating,
+                                    background_image = data.image,
+                                )
+                                if (_isFavorite){
+                                    viewModel.insert(gameFavClick)
+                                }else{
+                                    viewModel.delete(gameFavClick)
+                                }
+                            })
                         } else {
                             finish()
                         }

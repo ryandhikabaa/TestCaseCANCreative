@@ -4,11 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.rba29.testcasecancreative.Data.Db.FavoriteGames.FavoriteGames
+import com.rba29.testcasecancreative.Data.Db.FavoriteGames.FavoriteGamesDao
 import com.rba29.testcasecancreative.Data.Response.ListResultItem
 
 @Database(
-    entities = [ListResultItem::class, RemoteKeys::class],
-    version = 2,
+    entities = [ListResultItem::class, FavoriteGames::class, RemoteKeys::class],
+    version = 3,
     exportSchema = false
 )
 abstract class GamesDatabase : RoomDatabase() {
@@ -32,6 +34,8 @@ abstract class GamesDatabase : RoomDatabase() {
     }
 
     abstract fun gamesDao(): GamesDAO
+
+    abstract fun favoriteGamesDao(): FavoriteGamesDao
     abstract fun remoteKeysDao(): RemoteKeysDao
 
 }

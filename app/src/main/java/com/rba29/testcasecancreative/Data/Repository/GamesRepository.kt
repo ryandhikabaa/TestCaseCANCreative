@@ -10,6 +10,7 @@ import androidx.paging.PagingData
 import androidx.paging.liveData
 import com.rba29.testcasecancreative.BuildConfig
 import com.rba29.testcasecancreative.Data.Api.ApiService
+import com.rba29.testcasecancreative.Data.Db.FavoriteGames.FavoriteGames
 import com.rba29.testcasecancreative.Data.Db.GamesDatabase
 import com.rba29.testcasecancreative.Data.Paging.GamesRemoteMediator
 import com.rba29.testcasecancreative.Data.Response.DetailGameResponse
@@ -17,6 +18,8 @@ import com.rba29.testcasecancreative.Data.Response.ListResultItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class GamesRepository(
     private val apiService: ApiService,
@@ -28,7 +31,6 @@ class GamesRepository(
 
     private val _message = MutableLiveData<String>()
     val message: LiveData<String> = _message
-
 
 
     private val _listAllGames = MutableLiveData<List<ListResultItem>>()
@@ -55,9 +57,6 @@ class GamesRepository(
 
     private val _isStateDataDetail = MutableLiveData<Boolean>()
     val isStateDataDetail: LiveData<Boolean> = _isStateDataDetail
-
-//    private val _isAddLoading = MutableLiveData<Boolean>()
-//    val isAddLoading: LiveData<Boolean> = _isAddLoading
 
     fun getDetailGame(id: String) {
         _isLoading.value = true
@@ -87,6 +86,19 @@ class GamesRepository(
             }
         })
     }
+
+    //    CRD TO FAV
+    private val executorService: ExecutorService = Executors.newSingleThreadExecutor()
+    fun insert(favoriteGames: FavoriteGames) {
+        executorService.execute { db.favoriteGamesDao().insert(favoriteGames) }
+    }
+
+    fun delete(favoriteGames: FavoriteGames) {
+        executorService.execute { db.favoriteGamesDao().delete(favoriteGames) }
+    }
+
+    fun getFavoriteGamesById(id: String): LiveData<FavoriteGames> = db.favoriteGamesDao().getFavoriteGamesById(id)
+
 
     companion object {
         private const val TAG = "GamesRepository"
