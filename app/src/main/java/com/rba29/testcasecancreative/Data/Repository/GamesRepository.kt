@@ -99,6 +99,9 @@ class GamesRepository(
 
     fun getFavoriteGamesById(id: String): LiveData<FavoriteGames> = db.favoriteGamesDao().getFavoriteGamesById(id)
 
+    fun getAllFavorite(): LiveData<List<FavoriteGames>> = db.favoriteGamesDao().getAllUsersFav()
+
+
 
     companion object {
         private const val TAG = "GamesRepository"

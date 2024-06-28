@@ -13,5 +13,10 @@
     <string name="dummyLongText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis fringilla ipsum. Nam pharetra dapibus justo et pretium. Integer a semper augue, quis ultrices ante. Vestibulum sed massa nec ex vulputate consectetur sed at quam. Cras vestibulum dui non cursus semper. Quisque eleifend sit amet nisl vulputate imperdiet. Suspendisse in molestie ipsum, ac consectetur orci. Sed ante dolor, finibus dapibus pharetra sed, consectetur quis lacus.</string>
     <string name="retry">Retry</string>
 
+    <string name="favtitle">Favorite</string>
+    <string name="favdesc">You Favorite Game</string>
+
+    <string name="null_data_history">No Favorite Game data yet\nPlease search yout favorite game first</string>
+
 
 </resources>

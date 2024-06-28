@@ -19,10 +19,6 @@ import com.rba29.testcasecancreative.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-
-//    private lateinit var factory: ViewModelFactory
-//    private val mainViewModel: HomeFragmentViewModel by viewModels { factory }
-
     private lateinit var viewModel: HomeFragmentViewModel
 
     private var _binding: FragmentHomeBinding? = null

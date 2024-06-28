@@ -38,15 +38,17 @@ class DetailGamesActivity : AppCompatActivity() {
 
             val gamesData: ListResultItem? = intent.getParcelableExtra("EXTRA_GAMES")
 
-            viewModel.isLoading.observe(this@DetailGamesActivity) {
-                showLoading(it)
-            }
 
-            viewModel.message.observe(this@DetailGamesActivity) {
-                showToast(it)
-            }
 
             if (gamesData != null) {
+                viewModel.isLoading.observe(this@DetailGamesActivity) {
+                    showLoading(it)
+                }
+
+                viewModel.message.observe(this@DetailGamesActivity) {
+//                    showToast(it)
+                }
+
                 viewModel.getDetailGame(gamesData.id)
 
                 viewModel.gameDataDetail.observe(this@DetailGamesActivity) { data ->
