@@ -1,6 +1,7 @@
 package com.rba29.testcasecancreative.Data.Api
 
 import com.rba29.testcasecancreative.Data.Response.AllGamesResponse
+import com.rba29.testcasecancreative.Data.Response.DetailGameResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -14,5 +15,11 @@ interface ApiService {
         @Query("page_size") size: Int,
         @Query("key") token: String,
     ) : AllGamesResponse
+
+    @GET("games/{id}")
+    fun getDetailStory(
+        @Path("id") id: String,
+        @Query("key") token: String
+    ): Call<DetailGameResponse>
 
 }

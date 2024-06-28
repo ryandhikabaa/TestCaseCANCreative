@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.rba29.testcasecancreative.R
-import com.rba29.testcasecancreative.UI.Fragment.FavoriteFragment
+import com.rba29.testcasecancreative.UI.Fragment.FavoriteFragment.FavoriteFragment
 import com.rba29.testcasecancreative.UI.Fragment.HomeFragment.HomeFragment
 import com.rba29.testcasecancreative.databinding.ActivityMainBinding
 

@@ -1,4 +1,4 @@
-package com.rba29.testcasecancreative.UI.Fragment
+package com.rba29.testcasecancreative.UI.Fragment.FavoriteFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -50,11 +50,11 @@ class HomeFragment : Fragment() {
             viewModel = obtainViewModel(this@HomeFragment.requireActivity() as AppCompatActivity)
 
             viewModel.isLoading.observe(this@HomeFragment.requireActivity() as AppCompatActivity) {
-                showLoading(it)
+//                showLoading(it)
             }
 
             viewModel.message.observe(this@HomeFragment.requireActivity()) {
-                showToast(it)
+//                showToast(it)
             }
 
             val layoutManager = LinearLayoutManager(this@HomeFragment.requireActivity())
@@ -112,7 +112,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun showToast(message: String) {
-        Toast.makeText(this@HomeFragment.requireContext(), message, Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
     }
 
     private fun showLoading(state: Boolean) {
@@ -123,7 +123,7 @@ class HomeFragment : Fragment() {
 
     private fun obtainViewModel(activity: AppCompatActivity): HomeFragmentViewModel {
         val factory = ViewModelFactory.getInstance(
-            activity.application
+            this@HomeFragment.requireContext()
         )
         return ViewModelProvider(activity, factory).get(HomeFragmentViewModel::class.java)
     }

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rba29.testcasecancreative.Data.Response.ListResultItem
+import com.rba29.testcasecancreative.UI.Activity.DetailGamesActivity.DetailGamesActivity
 import com.rba29.testcasecancreative.databinding.ItemRowGameBinding
 
 class GamesAdapter : PagingDataAdapter<ListResultItem, GamesAdapter.MyViewHolder>(DIFF_CALLBACK) {
@@ -42,19 +43,10 @@ class GamesAdapter : PagingDataAdapter<ListResultItem, GamesAdapter.MyViewHolder
 
 
                 itemView.setOnClickListener {
-//                    val intent = Intent(itemView.context, StoryDetailActivity::class.java)
-//                    intent.putExtra("EXTRA_STORIES", story)
-//
-//
-//                    val optionsCompat: ActivityOptionsCompat =
-//                        ActivityOptionsCompat.makeSceneTransitionAnimation(
-//                            itemView.context as Activity,
-//                            Pair(ivStory, "image"),
-//                            Pair(tvName, "name"),
-//                            Pair(tvDesc, "description"),
-//                            Pair(createdAt, "createdAt"),
-//                        )
-//                    itemView.context.startActivity(intent, optionsCompat.toBundle())
+                    val intent = Intent(itemView.context, DetailGamesActivity::class.java)
+                    intent.putExtra("EXTRA_GAMES", story)
+
+                    itemView.context.startActivity(intent)
                 }
             }
 
