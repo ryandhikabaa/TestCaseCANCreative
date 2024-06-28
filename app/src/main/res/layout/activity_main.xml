@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Activity.MainActivity">
+    tools:context=".UI.Activity.MainActivity.MainActivity">
 
     <FrameLayout
         android:id="@+id/frame_layout"
@@ -21,7 +21,8 @@
         app:sbb_menu="@menu/bottom_nav"
         app:menu="@menu/bottom_nav"
         android:layout_alignParentBottom="true"
-        app:sbb_backgroundColor="@color/white"
-        app:sbb_activeColor="@color/colorPrimaryDark"/>
+        app:itemActiveIndicatorStyle="@style/Custom.Indicator"
+        app:backgroundTint="@color/white"
+        android:elevation="10dp"/>
 
 </RelativeLayout>

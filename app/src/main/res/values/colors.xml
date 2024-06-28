@@ -3,8 +3,9 @@
     <color name="navy">#3A3A3A</color>
 
     <color name="colorPrimary">#1679AB</color>
-    <color name="colorPrimaryDark">#102C57</color>
+    <color name="colorPrimaryDark">#1679AB</color>
     <color name="colorAccent">#FFB1B1</color>
+    <color name="colorPrimaryTransparent">#201679AB</color>
     <color name="orangeBareskrim">#F9C03F</color>
     <color name="orangeBareskrim2">#CFA33F</color>
     <color name="yellowBareskrim">#FFF200</color>

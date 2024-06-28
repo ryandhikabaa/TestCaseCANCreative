@@ -1,4 +1,4 @@
-package com.rba29.testcasecancreative.UI.Activity
+package com.rba29.testcasecancreative.UI.Activity.MainActivity
 
 import android.os.Bundle
 import android.widget.Toast

@@ -1,11 +1,13 @@
 package com.rba29.testcasecancreative.UI.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.rba29.testcasecancreative.R
+import com.rba29.testcasecancreative.UI.Activity.SearchActivity.SearchActivity
 import com.rba29.testcasecancreative.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -29,7 +31,13 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding){
+            var appVersion = requireContext().packageManager.getPackageInfo(requireContext().packageName, 0).versionName
+            tvAppVersion.text = "Apps Ver. : $appVersion"
 
+            etSearch.setOnClickListener {
+                val intent = Intent(requireContext(), SearchActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
