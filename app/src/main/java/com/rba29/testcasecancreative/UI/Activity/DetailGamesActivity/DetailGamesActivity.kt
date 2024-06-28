@@ -90,10 +90,13 @@ class DetailGamesActivity : AppCompatActivity() {
                                     rating = data.rating,
                                     background_image = data.image,
                                 )
+                                var name = data.name
                                 if (_isFavorite){
                                     viewModel.insert(gameFavClick)
+                                    Toast.makeText(this@DetailGamesActivity, "Berhasil menyimpan $name kedalam Game Favorite", Toast.LENGTH_SHORT).show()
                                 }else{
                                     viewModel.delete(gameFavClick)
+                                    Toast.makeText(this@DetailGamesActivity, "Berhasil menghapus $name dari Game Favorite", Toast.LENGTH_SHORT).show()
                                 }
                             })
                         } else {
