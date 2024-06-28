@@ -2,16 +2,12 @@ package com.rba29.testcasecancreative.UI.Activity.MainActivity
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.rba29.testcasecancreative.R
 import com.rba29.testcasecancreative.UI.Fragment.FavoriteFragment
-import com.rba29.testcasecancreative.UI.Fragment.HomeFragment
+import com.rba29.testcasecancreative.UI.Fragment.HomeFragment.HomeFragment
 import com.rba29.testcasecancreative.databinding.ActivityMainBinding
-import me.ertugrul.lib.OnItemSelectedListener
 
 class MainActivity : AppCompatActivity() {
 

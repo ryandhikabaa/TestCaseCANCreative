@@ -7,4 +7,11 @@
     <!--    Ketuk Dua Kali keluar -->
     <string name="confirm_close">Tekan kembali lagi untuk keluar</string>
 
+    <!-- GENERAL-->
+    <string name="title_development">Under Feature Development</string>
+    <string name="message_development">Sorry, the feature is currently under development, look forward to the latest update, Thank you</string>
+    <string name="dummyLongText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis fringilla ipsum. Nam pharetra dapibus justo et pretium. Integer a semper augue, quis ultrices ante. Vestibulum sed massa nec ex vulputate consectetur sed at quam. Cras vestibulum dui non cursus semper. Quisque eleifend sit amet nisl vulputate imperdiet. Suspendisse in molestie ipsum, ac consectetur orci. Sed ante dolor, finibus dapibus pharetra sed, consectetur quis lacus.</string>
+    <string name="retry">Retry</string>
+
+
 </resources>

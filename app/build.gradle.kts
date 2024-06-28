@@ -26,7 +26,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://api.rawg.io/api\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.rawg.io/api/\"")
+            buildConfigField("String", "TOKEN", "\"aa9c83b2be5c4ddf987a4a5a331bf9ec\"")
         }
         release {
             isMinifyEnabled = false
@@ -34,7 +35,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://api.rawg.io/api\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.rawg.io/api/\"")
+            buildConfigField("String", "TOKEN", "\"aa9c83b2be5c4ddf987a4a5a331bf9ec\"")
         }
     }
     compileOptions {
