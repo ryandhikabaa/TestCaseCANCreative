@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.rba29.testcasecancreative.Data.Repository.GamesRepository
 import com.rba29.testcasecancreative.UI.Activity.DetailGamesActivity.DetailGameViewModel
+import com.rba29.testcasecancreative.UI.Activity.SearchActivity.SearchActivityViewModel
 import com.rba29.testcasecancreative.UI.Fragment.FavoriteFragment.FavoriteViewModel
 import com.rba29.testcasecancreative.UI.Fragment.HomeFragment.HomeFragmentViewModel
 import com.rba29.testcasecancreative.Utils.Injection
@@ -25,6 +26,10 @@ class ViewModelFactory(private val repository: GamesRepository) :
 
             modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
                 FavoriteViewModel(repository) as T
+            }
+
+            modelClass.isAssignableFrom(SearchActivityViewModel::class.java) -> {
+                SearchActivityViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

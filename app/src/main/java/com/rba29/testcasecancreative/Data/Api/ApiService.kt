@@ -22,4 +22,10 @@ interface ApiService {
         @Query("key") token: String
     ): Call<DetailGameResponse>
 
+    @GET("games")
+    fun searchGame(
+        @Query("search") search: String,
+        @Query("key") token: String
+    ): Call<AllGamesResponse>
+
 }
